@@ -1,0 +1,8 @@
+connection
+connection.mysql.tables
+daoLayer
+exceptions
+facade
+javaBeans
+threads
+utils
