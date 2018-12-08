@@ -483,7 +483,7 @@ public class CompanyDBDAO implements CompanyDAO {
 				+ "' AND PASSWORD = '" + password + "'");
 
 		if (rs.next()) {
-			loggedInCompanyID = rs.getLong("COMP_ID");
+		//	loggedInCompanyID = rs.getLong("ID");
 		} else {
 			closeResources(stmt, rs, conn);
 			throw new LogInFailureException(CompanyExceptionConstants.COMPANY_LOGIN_FAILED);

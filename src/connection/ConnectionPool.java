@@ -23,7 +23,7 @@ public class ConnectionPool {
 
 
 	public Object key = new Object();   // key object to lock and release thread's access for a multi threaded
-	 									// program support.
+
 										// arConnection - array list for the connections of the pool.
 	private ArrayList<Connection> arConnection = new ArrayList<>();
 										// INSTANCE - the connection pool instance.

@@ -92,8 +92,8 @@ public class Main {
 		System.out.println("CREATE CUSTOMER");
 
 		Customer customer = new Customer();
-		customer.setCustName("Joe Dar");
-		customer.setPassword("666");
+		customer.setCustName("User6");
+		customer.setPassword("6666");
 
 		adminF.createCustomer(customer);
 
@@ -125,7 +125,7 @@ public class Main {
 
 		//* COMPANY FACADE METHODS *//*
 		System.out.println("COMPANY FACADE Login");
-		CompanyFacade companyFacade = (CompanyFacade) CouponSystem.getInstance().login("Google", "6452341",
+		CompanyFacade companyFacade = (CompanyFacade) CouponSystem.getInstance().login("Angel", "4444",
 				ClientType.COMPANY);
 
 		//* CREATE COUPON *//*
