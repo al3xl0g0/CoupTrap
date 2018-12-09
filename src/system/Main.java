@@ -10,6 +10,7 @@ import java.util.Date;
 
 import facade.AdminFacade;
 import facade.CompanyFacade;
+import facade.CustomerFacade;
 import javaBeans.ClientType;
 import javaBeans.Company;
 import javaBeans.Coupon;
@@ -124,8 +125,8 @@ public class Main {
 		//printItem(adminF.getAllCustomers());
 
 		//* COMPANY FACADE METHODS *//*
-		System.out.println("COMPANY FACADE Login");
-		CompanyFacade companyFacade = (CompanyFacade) CouponSystem.getInstance().login("Angel", "4444",
+		System.out.println("COMPANY FACADE LOGIN");
+		CompanyFacade companyFacade = (CompanyFacade) CouponSystem.getInstance().login("Maps", "8888",
 				ClientType.COMPANY);
 
 		//* CREATE COUPON *//*
@@ -148,50 +149,48 @@ public class Main {
 
 		//* UPDATE COUPON *//*
 
-		/*Date endDateUpdate = sdf.parse("2022-07-07");
+		Date endDateUpdate = sdf.parse("2018-07-07");
 		coupon.setEndDate(endDateUpdate);
 		coupon.setPrice(1000);
-
-		companyFacade.updateCoupon(coupon);*/
+		companyFacade.updateCoupon(coupon);
 
 		//* GET COUPON *//*
 
-		//System.out.println(companyFacade.getCoupon(10));
+		System.out.println(companyFacade.getCoupon(107));
 
 		//* REMOVE COUPON *//*
-
-		//companyFacade.removeCoupon(coupon);
+		System.out.println("REMOVE COUPON");
+		companyFacade.removeCoupon(coupon);
 
 		//* GET ALL COUPONS *//*
-
-//		printItem(companyFacade.getAllCoupons());
+		System.out.println("GET ALL COUPON");
+	//	printItem(companyFacade.getAllCoupons());
 
 		//* GET COUPON BY TYPE *//*
-
+		System.out.println("GET COUPON BY TYPE");
 	//	printItem(companyFacade.getCouponsByType(CouponType.HEALTH));
 
 		//* GET COUPON BY PRICE *//
 
-	//	printItem(companyFacade.getCouponsByPrice(150));
+		printItem(companyFacade.getCouponsByPrice(150));
 
 		//* GET COUPON BY DATE *//
 
-	//	Date date = sdf.parse("2027-07-07");
+		Date date = sdf.parse("2027-07-07");
 
 	//	printItem(companyFacade.getCouponsByDate(date));
 
 		/* CUSTOMER FACADE METHODS */
 
-	//	CustomerFacade customerFacade = (CustomerFacade) CouponSystem.getInstance().login("John Day", "111",
-			//	ClientType.CUSTOMER);
+		CustomerFacade customerFacade = (CustomerFacade) CouponSystem.getInstance().login("User5", "6666", ClientType.CUSTOMER);
 
 		//* PURCHASE COUPON *//
 
-	//	customerFacade.purchaseCoupon(companyFacade.getCoupon(30));
+		customerFacade.purchaseCoupon(companyFacade.getCoupon(107));
 
 		//* GET ALL PURCHASED COUPONS *//
 
-	//	printItem(customerFacade.getAllPurchasedCoupons());
+		printItem(customerFacade.getAllPurchasedCoupons());
 
 		//* GET ALL PURCHASED COUPONS BY TYPE *//
 

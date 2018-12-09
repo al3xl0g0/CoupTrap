@@ -33,7 +33,7 @@ public interface CompanyDAO {
 
 	 Collection<Coupon> getCoupons() throws SQLException, DataNotExistException, ShutDownException;
 
-	// Abstarct login method, for login later use.
+	// Abstract login method, for login later use.
 
 	 boolean login(String compName, String password)
 			throws SQLException, LogInFailureException, ShutDownException;
