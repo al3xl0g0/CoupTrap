@@ -19,8 +19,8 @@ public class TestPreparedInsert {
     public static void main(String[] args) throws Exception {
         AdminFacade adminF = (AdminFacade) CouponSystem.getInstance().login("admin", "1234", ClientType.ADMIN);
 
-       /* Company company = new Company();
-        company.setCompName("FoodliC1212312");
+        Company company = new Company();
+        company.setCompName("FoodliC12123122");
         company.setPassword("77787");
         company.setEmail("el2zadsf@gmail.com");
         adminF.createCompany(company);
@@ -33,7 +33,6 @@ public class TestPreparedInsert {
         company.setPassword("8888");
 
         adminF.updateCompany(company);
-*/
 
         System.out.println("COMPANY FACADE LOGIN");
         CompanyFacade companyFacade = (CompanyFacade) CouponSystem.getInstance().login("Maps", "8888",
@@ -77,8 +76,12 @@ public class TestPreparedInsert {
         	printItem(companyFacade.getAllCoupons());
 
         //* GET COUPON BY TYPE *//*
+        System.out.println("COMPANY FACADE LOGIN");
+        CompanyFacade companyFacade2 = (CompanyFacade) CouponSystem.getInstance().login("Maps", "8888",
+                ClientType.COMPANY);
+
         System.out.println("GET COUPON BY TYPE");
-        //	printItem(companyFacade.getCouponsByType(CouponType.HEALTH));
+        printItem(companyFacade2.getCouponsByType(CouponType.HEALTH));
 
         //* GET COUPON BY PRICE *//
 

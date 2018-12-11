@@ -18,23 +18,23 @@ public interface CustomerDAO {
 
 	// - Abstract methods to create, romove and etc customer related actions.
 
-	public void createCustomer(Customer customer) throws SQLException, DuplicateDataException, ShutDownException;
+	void createCustomer(Customer customer) throws SQLException, DuplicateDataException, ShutDownException;
 
-	public void removeCustomer(Customer customer) throws SQLException, DataNotExistException, ShutDownException;
+	void removeCustomer(Customer customer) throws SQLException, DataNotExistException, ShutDownException;
 
-	public void updateCustomer(Customer customer) throws SQLException, DataNotExistException, ShutDownException;
+	void updateCustomer(Customer customer) throws SQLException, DataNotExistException, ShutDownException;
 
 	// - Abstract methods to get customer related information such as getting
 	// customer, all customers or all customer coupons.
-	public Customer getCustomer(long id) throws SQLException, DataNotExistException, ShutDownException;
+	Customer getCustomer(long id) throws SQLException, DataNotExistException, ShutDownException;
 
-	public Collection<Customer> getAllCustomers() throws SQLException, DataNotExistException, ShutDownException;
+	Collection<Customer> getAllCustomers() throws SQLException, DataNotExistException, ShutDownException;
 
-	public Collection<Coupon> getCoupons() throws SQLException, DataNotExistException, ShutDownException;
+	Collection<Coupon> getCoupons() throws SQLException, DataNotExistException, ShutDownException;
 
 	// Abstarct login method, for login later use.
 
-	public boolean login(String custName, String password)
+	boolean login(String custName, String password)
 			throws SQLException, LogInFailureException, ShutDownException;
 
 }

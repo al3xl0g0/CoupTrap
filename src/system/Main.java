@@ -31,8 +31,6 @@ public class Main {
 
 		System.out.println("Starting application");
 
-
-
 		/* ADMIN FACADE */
 
 		AdminFacade adminF = (AdminFacade) CouponSystem.getInstance().login("admin", "1234", ClientType.ADMIN);
@@ -46,7 +44,7 @@ public class Main {
 		System.out.println("CREATE COMPANY");
 
 		Company company = new Company();
-		company.setCompName("FoodliC1223");
+		company.setCompName("FoodliC122312");
 		company.setPassword("77787");
 		company.setEmail("el2zadsf23@gmail.com");
 
@@ -78,10 +76,11 @@ public class Main {
 		exsistingCompanyForRemove.setPassword("4444");
 		exsistingCompanyForRemove.setEmail("angel@ang.comm");
 */
-		System.out.println("Remove company by name");
+		/*System.out.println("Remove company by name");
+
 		Company company1 = new Company();
-		company.setCompName("FoodliC12");
-		adminF.removeCompany(company1);
+		company.setCompName("FoodliC122312");
+		adminF.removeCompany(company1);*/
 
 		//* GET ALL COMPANIES *//*
 
@@ -97,6 +96,9 @@ public class Main {
 		customer.setPassword("6666");
 
 		adminF.createCustomer(customer);
+
+
+
 
 		//* UPDATE CUSTOMER *//*
 		System.out.println("UPDATE CUSTOMER");
@@ -125,6 +127,8 @@ public class Main {
 		//printItem(adminF.getAllCustomers());
 
 		//* COMPANY FACADE METHODS *//*
+
+
 		System.out.println("COMPANY FACADE LOGIN");
 		CompanyFacade companyFacade = (CompanyFacade) CouponSystem.getInstance().login("Maps", "8888",
 				ClientType.COMPANY);
@@ -162,17 +166,13 @@ public class Main {
 		System.out.println("REMOVE COUPON");
 		companyFacade.removeCoupon(coupon);
 
-		//* GET ALL COUPONS *//*
-		System.out.println("GET ALL COUPON");
-	//	printItem(companyFacade.getAllCoupons());
+		der5
 
-		//* GET COUPON BY TYPE *//*
-		System.out.println("GET COUPON BY TYPE");
-	//	printItem(companyFacade.getCouponsByType(CouponType.HEALTH));
+
 
 		//* GET COUPON BY PRICE *//
 
-		printItem(companyFacade.getCouponsByPrice(150));
+		//printItem(companyFacade.getCouponsByPrice(150));
 
 		//* GET COUPON BY DATE *//
 
@@ -182,11 +182,11 @@ public class Main {
 
 		/* CUSTOMER FACADE METHODS */
 
-		CustomerFacade customerFacade = (CustomerFacade) CouponSystem.getInstance().login("User5", "6666", ClientType.CUSTOMER);
+		CustomerFacade customerFacade = (CustomerFacade) CouponSystem.getInstance().login("User5", "5555", ClientType.CUSTOMER);
 
 		//* PURCHASE COUPON *//
 
-		customerFacade.purchaseCoupon(companyFacade.getCoupon(107));
+		customerFacade.purchaseCoupon(companyFacade.getCoupon(109));
 
 		//* GET ALL PURCHASED COUPONS *//
 
