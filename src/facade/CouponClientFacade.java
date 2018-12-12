@@ -2,7 +2,7 @@ package facade;
 
 import java.sql.SQLException;
 
-import javaBeans.ClientType;
+import enumerators.ClientType;
 
 /**
  * @author Alexander Logovinsky "AlexLogo"

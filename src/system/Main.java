@@ -11,12 +11,12 @@ import java.util.Date;
 import facade.AdminFacade;
 import facade.CompanyFacade;
 import facade.CustomerFacade;
-import javaBeans.ClientType;
+import enumerators.ClientType;
 import javaBeans.Company;
 import javaBeans.Coupon;
-import javaBeans.CouponType;
+import enumerators.CouponType;
 import javaBeans.Customer;
-import system.CouponSystem;
+
 
 
 /**
@@ -29,22 +29,25 @@ public class Main {
 
 
 
-		System.out.println("Starting application");
+		System.out.println("######################STARTING APP######################");
 
 		/* ADMIN FACADE */
+		System.out.println("######################ADMIN FACADE######################");
 
 		AdminFacade adminF = (AdminFacade) CouponSystem.getInstance().login("admin", "1234", ClientType.ADMIN);
 
-		System.out.println("ADMIN FACADE");
+
 
 		/* ADIMIN FACADE - COMPANY METHODS */
 
 		/* CREATE COMPANY */
 
-		System.out.println("CREATE COMPANY");
+		System.out.println("######################CREATE COMPANY CONSTRUCTOR TEST######################");
+		adminF.createCompany(new Company("BUG22", "2222", "bug1@gmail.com"));
 
+		System.out.println("######################CREATE COMPANY TEST GETER's and SETERS's################");
 		Company company = new Company();
-		company.setCompName("FoodliC122312");
+		company.setCompName("Foodli");
 		company.setPassword("77787");
 		company.setEmail("el2zadsf23@gmail.com");
 
@@ -56,7 +59,7 @@ public class Main {
 
 
 		//* UPDATE COMPANY *//*
-		System.out.println("UPDATE COMPANY");
+		System.out.println("######################UPDATE COMPANY######################");
 
 		company.setEmail("el34f@walla.com");
 		company.setPassword("8888");
@@ -64,7 +67,7 @@ public class Main {
 		adminF.updateCompany(company);
 
 		//* GET COMPANY BY ID *//*
-		System.out.println("GET COMPANY BY: 27");
+		System.out.println("######################GET COMPANY BY: 27######################");
 
 		System.out.println(adminF.getCompany(27));
 
@@ -89,7 +92,7 @@ public class Main {
 		//* ADMIN CUSTOMER METHODS *//
 
 		//* CREATE CUSTOMER *//
-		System.out.println("CREATE CUSTOMER");
+		System.out.println("######################CREATE CUSTOMER######################");
 
 		Customer customer = new Customer();
 		customer.setCustName("User6");
@@ -101,7 +104,7 @@ public class Main {
 
 
 		//* UPDATE CUSTOMER *//*
-		System.out.println("UPDATE CUSTOMER");
+		System.out.println("######################UPDATE CUSTOMER######################");
 
 		customer.setPassword("999");
 		adminF.updateCustomer(customer);
@@ -129,7 +132,7 @@ public class Main {
 		//* COMPANY FACADE METHODS *//*
 
 
-		System.out.println("COMPANY FACADE LOGIN");
+		System.out.println("######################COMPANY FACADE LOGIN######################");
 		CompanyFacade companyFacade = (CompanyFacade) CouponSystem.getInstance().login("Maps", "8888",
 				ClientType.COMPANY);
 
@@ -163,10 +166,10 @@ public class Main {
 		System.out.println(companyFacade.getCoupon(107));
 
 		//* REMOVE COUPON *//*
-		System.out.println("REMOVE COUPON");
+		System.out.println("######################REMOVE COUPON######################");
 		companyFacade.removeCoupon(coupon);
 
-		der5
+
 
 
 
@@ -175,18 +178,17 @@ public class Main {
 		//printItem(companyFacade.getCouponsByPrice(150));
 
 		//* GET COUPON BY DATE *//
+		//Date date = sdf.parse("2027-07-07");
 
-		Date date = sdf.parse("2027-07-07");
-
-	//	printItem(companyFacade.getCouponsByDate(date));
+	   //	printItem(companyFacade.getCouponsByDate(date));
 
 		/* CUSTOMER FACADE METHODS */
-
+		System.out.println("################CUSTOMER FACADE LOGIN######################");
 		CustomerFacade customerFacade = (CustomerFacade) CouponSystem.getInstance().login("User5", "5555", ClientType.CUSTOMER);
 
 		//* PURCHASE COUPON *//
-
-		customerFacade.purchaseCoupon(companyFacade.getCoupon(109));
+		System.out.println("######################PURCHASE COUPON######################");
+		customerFacade.purchaseCoupon(companyFacade.getCoupon(127));
 
 		//* GET ALL PURCHASED COUPONS *//
 

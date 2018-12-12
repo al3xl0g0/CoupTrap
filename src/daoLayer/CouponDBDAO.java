@@ -13,7 +13,7 @@ import java.util.Date;
 
 import connection.ConnectionPool;
 import javaBeans.Coupon;
-import javaBeans.CouponType;
+import enumerators.CouponType;
 import exceptions.DataNotExistException;
 import exceptions.DuplicateDataException;
 import exceptions.GeneralErrorException;

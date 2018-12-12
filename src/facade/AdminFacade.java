@@ -5,7 +5,7 @@ import java.util.Collection;
 import daoLayer.CompanyDBDAO;
 import daoLayer.CouponDBDAO;
 import daoLayer.CustomerDBDAO;
-import javaBeans.ClientType;
+import enumerators.ClientType;
 import javaBeans.Company;
 import javaBeans.Customer;
 import exceptions.DataNotExistException;

@@ -9,11 +9,11 @@ import java.util.Date;
 
 import facade.AdminFacade;
 import facade.CompanyFacade;
-import javaBeans.ClientType;
+import enumerators.ClientType;
 import javaBeans.Company;
 import javaBeans.Coupon;
-import javaBeans.CouponType;
-import system.CouponSystem;
+import enumerators.CouponType;
+
 
 public class TestPreparedInsert {
     public static void main(String[] args) throws Exception {

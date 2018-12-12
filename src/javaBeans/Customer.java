@@ -49,6 +49,13 @@ public class Customer {
 		this.coupons = coupons;
 	}
 
+
+	public Customer(String custName, String password) {
+		super();
+		this.custName = custName;
+		this.password = password;
+	}
+
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", custName=" + custName + ", password=" + password + ", coupons=" + coupons

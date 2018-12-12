@@ -1,4 +1,8 @@
-package javaBeans;
+/*
+ * Copyright (c) 2018. Alex Logo. License freebsd.
+ */
+
+package enumerators;
 
 /**
  * @author Alexander Logovinsky "AlexLogo"

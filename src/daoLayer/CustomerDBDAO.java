@@ -10,7 +10,7 @@ import java.util.Collection;
 
 import connection.ConnectionPool;
 import javaBeans.Coupon;
-import javaBeans.CouponType;
+import enumerators.CouponType;
 import javaBeans.Customer;
 import exceptions.DuplicateDataException;
 import exceptions.LogInFailureException;

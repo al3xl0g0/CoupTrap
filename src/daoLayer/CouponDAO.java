@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 
 import javaBeans.Coupon;
-import javaBeans.CouponType;
+import enumerators.CouponType;
 import exceptions.DataNotExistException;
 import exceptions.DuplicateDataException;
 import exceptions.ShutDownException;

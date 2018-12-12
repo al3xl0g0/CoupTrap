@@ -1,5 +1,7 @@
 package javaBeans;
 
+import enumerators.CouponType;
+
 import java.util.Date;
 
 /**
@@ -93,6 +95,20 @@ public class Coupon {
 	}
 
 	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+	public Coupon(String title, Date startDate, Date endDate, int amount, CouponType type, String message,
+				  double price, String image) {
+		super();
+		this.title = title;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.amount = amount;
+		this.type = type;
+		this.message = message;
+		this.price = price;
 		this.image = image;
 	}
 

@@ -11,7 +11,7 @@ import facade.AdminFacade;
 import facade.CompanyFacade;
 import facade.CouponClientFacade;
 import facade.CustomerFacade;
-import javaBeans.ClientType;
+import enumerators.ClientType;
 import threads.ClearCouponTask;
 
 /**

@@ -45,6 +45,15 @@ public class Company {
 		return email;
 	}
 
+	public Company(String compName, String password, String email) {
+		super();
+		this.compName = compName;
+		this.password = password;
+		this.email = email;
+	}
+
+
+
 	public void setEmail(String email) {
 		this.email = email;
 	}

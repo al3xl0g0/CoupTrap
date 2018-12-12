@@ -11,7 +11,7 @@ import java.util.Collection;
 import connection.ConnectionPool;
 import javaBeans.Company;
 import javaBeans.Coupon;
-import javaBeans.CouponType;
+import enumerators.CouponType;
 import exceptions.DuplicateDataException;
 import exceptions.LogInFailureException;
 import exceptions.ShutDownException;

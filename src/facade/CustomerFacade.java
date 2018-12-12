@@ -6,9 +6,9 @@ import java.util.Collection;
 
 import daoLayer.CouponDBDAO;
 import daoLayer.CustomerDBDAO;
-import javaBeans.ClientType;
+import enumerators.ClientType;
 import javaBeans.Coupon;
-import javaBeans.CouponType;
+import enumerators.CouponType;
 import exceptions.DuplicateDataException;
 import exceptions.GeneralErrorException;
 import exceptions.LogInFailureException;
