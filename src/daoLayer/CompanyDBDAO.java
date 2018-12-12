@@ -24,7 +24,6 @@ import exceptions.DataNotExistException;
  */
 public class CompanyDBDAO implements CompanyDAO {
 
-	// - pool the connection pool object.
 	private ConnectionPool pool;
 
 	/**
@@ -39,9 +38,6 @@ public class CompanyDBDAO implements CompanyDAO {
 	 * 
 	 */
 	public CompanyDBDAO() {
-
-		// pool is an instance of the connection pool object that hold the
-		// conenction in it.
 
 		pool = ConnectionPool.getInstance();
 
@@ -68,17 +64,7 @@ public class CompanyDBDAO implements CompanyDAO {
 
 		if (!checkIfCompanyExists(company.getCompName())) {
 
-			// conn - connection received from the pool.
 			Connection conn = pool.getConnection();
-
-			/*
-			 * String sql - query for the data base. PreparedStatement
-			 * preparedStatment - the statment that through the connection uses
-			 * the sql object and communicating with the data base and returning
-			 * ResultSet generated keys to the object generateKeys - holds the
-			 * generated keys from the data base. long id - the variable to hold
-			 * the company's id.
-			 */
 
 			String sql = "INSERT INTO Company (COMP_NAME, PASSWORD, EMAIL) VALUES (?,?,?)";
 			PreparedStatement preparedStatement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -121,13 +107,6 @@ public class CompanyDBDAO implements CompanyDAO {
 	@Override
 	public void removeCompany(Company company) throws SQLException, DataNotExistException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement stmt - statment
-		 * that through the connection communicates with the data base.
-		 * ResultSet rs - hold the result of the sql query. int compId - the
-		 * company's id.
-		 * 
-		 */
 		if (checkIfCompanyExists(company.getCompName())) {
 			Connection conn = pool.getConnection();
 			Statement stmt = conn.createStatement();
@@ -174,12 +153,6 @@ public class CompanyDBDAO implements CompanyDAO {
 
 		if (checkIfCompanyExists(company.getCompName())) {
 
-			/*
-			 * Connection conn - connection from the pool. Statement stmt -
-			 * statment
-			 *
-			 * that through the connection communicates with the data base.
-			 */
 			Connection conn = pool.getConnection();
 			Statement stmt = conn.createStatement();
 
@@ -214,14 +187,6 @@ public class CompanyDBDAO implements CompanyDAO {
 	@Override
 	public Company getCompany(long id) throws SQLException, DataNotExistException, ShutDownException {
 
-		/*
-		 * Company companyRecieved - the company that will be received from the
-		 * data base. Connection conn - connection from the pool. Statement -
-		 * stmt - statment that through the connection communicates with the
-		 * data base. ResultSet rs - hold the result of the sql query. int
-		 * compId - the company's id. ArrayList<Coupon> companyCoupons - all the
-		 * coupons of the specific company.
-		 */
 		Company companyRecieved = new Company();
 		Connection conn = pool.getConnection();
 
@@ -240,11 +205,7 @@ public class CompanyDBDAO implements CompanyDAO {
 							+ ")");
 
 			while (rSet.next()) {
-				/*
-				 * Coupon companyCoupon - a company's coupon to be created.
-				 * String stringType - holds the type of the coupon in string
-				 * object. CouponType type - the type of the coupon in enum.
-				 */
+
 				Coupon companyCoupon = new Coupon();
 				String stringType;
 				companyCoupon.setId(rSet.getLong("ID"));
@@ -289,14 +250,6 @@ public class CompanyDBDAO implements CompanyDAO {
 	@Override
 	public Collection<Company> getAllCompanies() throws SQLException, DataNotExistException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rs - hold the result of the sql query. int compId - the
-		 * company's id. ArrayList<Coupon> companyCoupons - all the coupons of
-		 * the specific company. Collection<Company> allCompanyList - a list of
-		 * all the company objects.
-		 */
 		Connection conn = pool.getConnection();
 		Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 		ResultSet rSet = stmt.executeQuery("SELECT * FROM Company");
@@ -340,17 +293,9 @@ public class CompanyDBDAO implements CompanyDAO {
 	@Override
 	public Collection<Coupon> getCoupons() throws SQLException, DataNotExistException, ShutDownException {
 
-		// CouponDBDAO couponDBDAO - the class that communicate with the data
-		// base for related coupon actions.
-
 		CouponDBDAO couponDBDAO = new CouponDBDAO();
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rSet - hold the result of the sql query. Collection<Coupon>
-		 * allCouponList - array list of all the coupons of the company.
-		 */
+
 		Connection conn = pool.getConnection();
 		Statement stmt = conn.createStatement();
 		ResultSet rSet;
@@ -362,21 +307,16 @@ public class CompanyDBDAO implements CompanyDAO {
 		if (rSet.next()) {
 			rSet = stmt.executeQuery("SELECT COUPON_ID FROM Company_Coupon WHERE ID=" + loggedInCompanyID);
 
-			// Collection<Integer> couponsId - list of all the company coupon's
-			// id integer objects.
 			Collection<Integer> couponsId = new ArrayList<>();
 
 			while (rSet.next()) {
 
-				// Integer couponIdInteger - coupon id integer of a coupon of
-				// the company.
 				Integer couponIdInteger = rSet.getInt("COUPON_ID");
 				couponsId.add(couponIdInteger);
 			}
 
 			for (Integer integer : couponsId) {
 
-				// Coupon couponFromId - a full coupon object by the coupon id.
 				Coupon couponFromId = couponDBDAO.getCoupon(integer);
 				allCouponList.add(couponFromId);
 			}
@@ -430,17 +370,11 @@ public class CompanyDBDAO implements CompanyDAO {
 	 */
 	private boolean checkIfCompanyExists(String name) throws SQLException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rSet - hold the result of the sql query.
-		 */
 		Connection conn = pool.getConnection();
 		Statement stmt = conn.createStatement();
 
 		ResultSet rSet = stmt.executeQuery("SELECT COMP_NAME FROM Company WHERE COMP_NAME='" + name + "'");
 
-		// boolean flag - indicates if the company exists or not.
 		boolean flag = false;
 		if (rSet.next()) {
 			flag = true;
@@ -471,11 +405,6 @@ public class CompanyDBDAO implements CompanyDAO {
 	public boolean login(String compName, String password)
 			throws SQLException, LogInFailureException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rSet - hold the result of the sql query.
-		 */
 		Connection conn = pool.getConnection();
 		Statement stmt = conn.createStatement();
 
@@ -483,7 +412,7 @@ public class CompanyDBDAO implements CompanyDAO {
 				+ "' AND PASSWORD = '" + password + "'");
 
 		if (rs.next()) {
-		//	loggedInCompanyID = rs.getLong("ID");
+
 		} else {
 			closeResources(stmt, rs, conn);
 			throw new LogInFailureException(CompanyExceptionConstants.COMPANY_LOGIN_FAILED);

@@ -53,7 +53,7 @@ public class ClearCouponTask implements Runnable, Serializable {
                 }
                 
                 ConnectionPool.getInstance().returnConnection(conn);
-                System.out.println("System updated successfully and all old coupons had been removed successfully.");
+                System.out.println("######CLEAR OLD COUPONS#######System updated successfully and all old coupons had been removed successfully.");
                 Thread.sleep(86400000L);
             } catch (SQLException | InterruptedException | DataNotExistException | ShutDownException dcetE0  ) {
                 dcetE0.getMessage();

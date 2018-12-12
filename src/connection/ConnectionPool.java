@@ -17,19 +17,13 @@ import exceptions.GeneralExceptionConstants;
 public class ConnectionPool {
 
 
-												//private DBType dbType = DBType.MYSQL;
-	private	Connection conn = null;             // conn - empty connection object . stmt - empty statement object.
-	private	Statement stmt = null;
+	//private	Connection conn = null;
+	//private	Statement stmt = null;
 
 
-	public Object key = new Object();   // key object to lock and release thread's access for a multi threaded
-
-										// arConnection - array list for the connections of the pool.
+	public Object key = new Object();
 	private ArrayList<Connection> arConnection = new ArrayList<>();
-										// INSTANCE - the connection pool instance.
 	private static ConnectionPool INSTANCE = null;
-										// shutDownActivated - turns true when shut down is activated to prevent
-										// further use of connections.
 	private boolean shutDownActivated = false;
 
 	/**
@@ -42,13 +36,11 @@ public class ConnectionPool {
 	 *             specified name could be found.
 	 */
 	private ConnectionPool() throws ClassNotFoundException {
-															// JDBC connection to the data base.
+
 		Class.forName(ConnectionData.JDBC_DRIVER);
 
 		for (int i = 0; i < ConnectionData.maxConnections; i++) {
 			try {
-				// Driver and connection related member of url of the data base
-				// and the user and password to it.
 				Connection newConnection = DriverManager.getConnection(ConnectionData.DB_URL, ConnectionData.USER,
 						ConnectionData.PASS);
 				arConnection.add(newConnection);
@@ -68,7 +60,6 @@ public class ConnectionPool {
 		synchronized (ConnectionPool.class) {
 			if (INSTANCE == null) {
 				try {
-					// instance - the created connection pool instance.
 					INSTANCE = new ConnectionPool();
 				} catch (ClassNotFoundException e) {
 					System.err.println(e.getMessage());
@@ -89,8 +80,6 @@ public class ConnectionPool {
 	 *             attempt to do use of the program.
 	 */
 	public Connection getConnection() throws ShutDownException {
-		// resultConnection - the connection the will be returned for use with
-		// the data base.
 		Connection resultConnection = null;
 		if (!shutDownActivated) {
 			try {
@@ -136,8 +125,6 @@ public class ConnectionPool {
 	 *             - When database access error or other errors occur.
 	 */
 	public void closeAllConnections() throws SQLException {
-		// shutDownActivated - boolean that indicates if shut down was
-		// activated.
 		shutDownActivated = true;
 		if (arConnection.size() != ConnectionData.maxConnections) {
 			try {

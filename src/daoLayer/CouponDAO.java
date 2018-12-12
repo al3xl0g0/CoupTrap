@@ -15,17 +15,11 @@ import exceptions.ShutDownException;
  */
 public interface CouponDAO {
 
-	// - Abstract methods to create, romove and etc coupon related actions.
-
-
 	void createCoupon(Coupon coupon) throws SQLException, DuplicateDataException, ShutDownException;
 
 	void removeCoupon(Coupon coupon) throws SQLException, DataNotExistException, ShutDownException;
 
 	void updateCoupon(Coupon coupon) throws SQLException, DataNotExistException, ShutDownException;
-
-	// - Abstract methods to get coupon related information such as getting
-	// coupon, all coupons or all coupons by type .
 
 	Coupon getCoupon(long id) throws SQLException, DataNotExistException, ShutDownException;
 

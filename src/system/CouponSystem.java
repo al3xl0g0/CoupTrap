@@ -30,7 +30,7 @@ public final class CouponSystem {
 	// task - the daily coupon task thread.
 	private ClearCouponTask task;
 
-	// instance - the coupon system instance.
+
 	private static CouponSystem instance = null;
 
 	/**
@@ -78,13 +78,7 @@ public final class CouponSystem {
 	 */
 	public CouponClientFacade login(String name, String password, ClientType clientType) throws SQLException {
 
-		// result is an object CouponClientFacade type, in start value null. For
-		// later facade use.
 		CouponClientFacade result = null;
-
-		// Test UCI
-
-		//
 
 		switch (clientType) {
 		case ADMIN:

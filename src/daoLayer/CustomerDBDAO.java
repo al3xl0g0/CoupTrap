@@ -204,14 +204,6 @@ public class CustomerDBDAO implements CustomerDAO {
 	@Override
 	public Customer getCustomer(long id) throws SQLException, DataNotExistException, ShutDownException {
 
-		/*
-		 * customer customerRecieved - the customer that will be received from
-		 * the data base. Connection conn - connection from the pool. Statement
-		 * - stmt - statment that through the connection communicates with the
-		 * data base. ResultSet rs - hold the result of the sql query.
-		 * ArrayList<Coupon> customerCoupons - all the coupons of the specific
-		 * customer.
-		 */
 		Customer customerRecieved = new Customer();
 		Connection conn = pool.getConnection();
 
@@ -273,12 +265,6 @@ public class CustomerDBDAO implements CustomerDAO {
 	@Override
 	public Collection<Customer> getAllCustomers() throws SQLException, DataNotExistException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rs - hold the result of the sql query. ArrayList<Customer>
-		 * allCustomerList - all the customer of the system.
-		 */
 		Connection conn = pool.getConnection();
 		Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 		ResultSet rSet = stmt.executeQuery("SELECT * FROM Customer");
@@ -321,12 +307,6 @@ public class CustomerDBDAO implements CustomerDAO {
 	@Override
 	public Collection<Coupon> getCoupons() throws SQLException, DataNotExistException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rSet - hold the result of the sql query. Collection<Coupon>
-		 * allCouponList - array list of all the coupons of the customer.
-		 */
 		CouponDBDAO couponDBDAO = new CouponDBDAO();
 
 		Connection conn = pool.getConnection();
@@ -401,11 +381,6 @@ public class CustomerDBDAO implements CustomerDAO {
 	 */
 	private boolean checkIfCustomerExists(String name) throws SQLException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rSet - hold the result of the sql query.
-		 */
 		Connection conn = pool.getConnection();
 		Statement stmt = conn.createStatement();
 
@@ -442,11 +417,6 @@ public class CustomerDBDAO implements CustomerDAO {
 	public boolean login(String custName, String password)
 			throws SQLException, LogInFailureException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rSet - hold the result of the sql query.
-		 */
 		Connection conn = pool.getConnection();
 		Statement stmt = conn.createStatement();
 

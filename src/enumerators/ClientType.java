@@ -1,6 +1,4 @@
-/*
- * Copyright (c) 2018. Alex Logo. License freebsd.
- */
+
 
 package enumerators;
 

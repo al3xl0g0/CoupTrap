@@ -280,12 +280,6 @@ public class CouponDBDAO implements CouponDAO {
 	@Override
 	public Collection<Coupon> getAllCoupon() throws SQLException, DataNotExistException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rSet - hold the result of the sql query. ArrayList<Coupon>
-		 * allCouponList - list of all the coupons objects.
-		 */
 		Connection conn = pool.getConnection();
 		Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
@@ -339,12 +333,6 @@ public class CouponDBDAO implements CouponDAO {
 	public Collection<Coupon> getCouponByType(CouponType couponType)
 			throws SQLException, DataNotExistException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rSet - hold the result of the sql query. ArrayList<Coupon>
-		 * couponsByType - list of all the coupons objects by type.
-		 */
 		Connection conn = pool.getConnection();
 		Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
@@ -398,18 +386,10 @@ public class CouponDBDAO implements CouponDAO {
 
 		if (checkIfCouponExists(coupon.getTitle())) {
 
-			/*
-			 * Connection conn - connection from the pool. Statement - stmt -
-			 * statment that through the connection communicates with the data
-			 * base. ResultSet rSet - hold the result of the sql query. rSetId -
-			 * second rs for the id.
-			 *
-			 */
+
 			Connection conn = pool.getConnection();
 			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			// cal - calender object.
 			Calendar cal = Calendar.getInstance();
-			// currentDate- object for the today current date.
 			Date currentDate = null;
 			currentDate = (Date) cal.getTime();
 			ResultSet rSetId = null;
@@ -488,17 +468,10 @@ public class CouponDBDAO implements CouponDAO {
 	 */
 	private boolean checkIfCouponExists(String title) throws SQLException, ShutDownException {
 
-		/*
-		 * Connection conn - connection from the pool. Statement - stmt -
-		 * statment that through the connection communicates with the data base.
-		 * ResultSet rSet - hold the result of the sql query.
-		 *
-		 */
 		Connection conn = pool.getConnection();
 		Statement stmt = conn.createStatement();
 		ResultSet rSet = stmt.executeQuery("SELECT TITLE FROM Coupon WHERE TITLE='" + title + "'");
 
-		// flag - boolean indicates if the coupon exists or not.
 		boolean flag = false;
 		if (rSet.next()) {
 			flag = true;

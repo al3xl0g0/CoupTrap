@@ -16,7 +16,6 @@ import exceptions.ShutDownException;
  */
 public interface CompanyDAO {
 
-	// - Abstract methods to create, romove and etc company related actions.
 
 	 void createCompany(Company company) throws SQLException, DuplicateDataException, ShutDownException;
 
@@ -24,16 +23,12 @@ public interface CompanyDAO {
 
 	 void updateCompany(Company Company) throws SQLException, DataNotExistException, ShutDownException;
 
-	// - Abstract methods to get company related information such as getting
-	// company, all companies or all company coupons.
 
 	 Company getCompany(long id) throws SQLException, DataNotExistException, ShutDownException;
 
 	 Collection<Company> getAllCompanies() throws SQLException, DataNotExistException, ShutDownException;
 
 	 Collection<Coupon> getCoupons() throws SQLException, DataNotExistException, ShutDownException;
-
-	// Abstract login method, for login later use.
 
 	 boolean login(String compName, String password)
 			throws SQLException, LogInFailureException, ShutDownException;

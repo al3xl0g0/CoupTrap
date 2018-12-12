@@ -1,4 +1,8 @@
-package connection.mysql.tables;
+/*
+ * Copyright (c) 2018. Alex Logo. License freebsd.
+ */
+
+package connection.sql.tables;
 
 
     import java.sql.Connection;
