@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e8f9f67-16b9-437a-9925-a261275e8c18" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/connection/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/connection/ConnectionPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/connection/mysql/tables/DatabaseCreation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/system/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/system/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/connection/mysql/tables/DatabaseCreation.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/connection/mysql/tables/DatabaseCreation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/connection/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/connection/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/connection/mysql/tables/DatabaseCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/connection/sql/tables/DatabaseCreation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/daoLayer/CompanyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/daoLayer/CompanyDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/daoLayer/CompanyDBDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/daoLayer/CompanyDBDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/daoLayer/CouponDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/daoLayer/CouponDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/daoLayer/CouponDBDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/daoLayer/CouponDBDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/daoLayer/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/daoLayer/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/daoLayer/CustomerDBDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/daoLayer/CustomerDBDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enumerators/ClientType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumerators/ClientType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enumerators/CouponType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enumerators/CouponType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/CouponSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/CouponSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/threads/ClearCouponTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/threads/ClearCouponTask.java" afterDir="false" />
-    </list>
+    <list default="true" id="0e8f9f67-16b9-437a-9925-a261275e8c18" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/src/system/CouponSystem.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-81">
-              <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClearCouponTask.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClearCouponTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/threads/ClearCouponTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="55" column="59" lean-forward="true" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
+            <state relative-caret-position="330">
+              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,7 +71,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InputHelper.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="InputHelper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utils/InputHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -459,7 +440,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -467,11 +447,11 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5113095" side_tool="true" visible="true" weight="0.37274548" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.30952382" side_tool="true" visible="true" weight="0.46392787" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48869047" visible="true" weight="0.37274548" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6904762" visible="true" weight="0.46392787" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="right" id="Coverage" order="4" side_tool="true" visible="true" weight="0.3297619" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" visible="true" weight="0.16607143" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="Jelastic" order="7" />
@@ -804,17 +784,7 @@
     <entry file="file://$PROJECT_DIR$/src/system/CouponSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-81">
-          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/InputHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -853,8 +823,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/threads/ClearCouponTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="55" column="59" lean-forward="true" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
+        <state relative-caret-position="330">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/InputHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
