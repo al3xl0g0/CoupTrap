@@ -34,8 +34,8 @@ public final class CouponSystem {
 	private static CouponSystem instance = null;
 
 	/**
-	 * Constructs the coupon system while starting the daily task thread (which
-	 * is daemon).
+	 *  Daily task thread constructs (which daemon).
+	 *
 	 */
 	private CouponSystem() {
 		task = new ClearCouponTask();
@@ -62,7 +62,7 @@ public final class CouponSystem {
 
 	/**
 	 * The login method that receives parameters and according to the client
-	 * type, attempts login at the specific facade, while returning a facade
+	 * type, attempts login filter at the specific facade, while returning a facade
 	 * object if the login was successful.
 	 * 
 	 * @param name
@@ -98,7 +98,7 @@ public final class CouponSystem {
 	}
 
 	/**
-	 * To activate the shut down of the system. Starting at stopping the daily
+	 *  Shut down: Starting at stopping the daily
 	 * task thread, and after that, closing all connections and exiting.
 	 *
 	 */

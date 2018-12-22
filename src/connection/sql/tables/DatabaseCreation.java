@@ -12,6 +12,9 @@ package connection.sql.tables;
 
     import connection.ConnectionData;
 
+/**
+ * This class is useful to de-normalization of Database and tables
+ */
     public class DatabaseCreation {
         public static void main(String[] args) {
 

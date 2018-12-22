@@ -121,7 +121,7 @@ public class CompanyDBDAO implements CompanyDAO {
 			stmt.execute(
 					"DELETE Customer_Coupon FROM Customer_Coupon WHERE COUPON_ID IN(select COUPON_ID FROM Company_Coupon WHERE ID="
 							+ compId + ");");
-			stmt.execute("DELETE Company_Coupon FROM Company_Coupon WHERE ID=" + compId + ";")*/;
+			stmt.execute("DELETE Company_Coupon FROM Company_Coupon WHERE ID=" + compId + ";");*/
 			stmt.execute("DELETE Company FROM Company WHERE ID=" + compId + ";");
 
 			stmt.close();

@@ -3,6 +3,10 @@ package utils;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+/**
+ *Input Helper test
+ * Java Scanner alternative
+ */
 public class InputHelper {
 
     public static String getInput(String prompt) {

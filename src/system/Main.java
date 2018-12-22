@@ -7,8 +7,11 @@ package system;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Scanner;
 
 
+import exceptions.GeneralExceptionConstants;
+import exceptions.LogInFailureException;
 import facade.AdminFacade;
 import facade.CompanyFacade;
 import facade.CustomerFacade;
@@ -27,7 +30,50 @@ import javaBeans.Customer;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		try {
+			CouponSystem cs = CouponSystem.getInstance();
+			System.out.println("enter:\n 1 for Admin: User name admin, password 1234, RUN TEST SYSTEM \n 2 for customer \n 3 for company");
+			//boolean log = false;
+            System.out.println("Please TYPE: 1");
+            int log = sc.nextInt();
+			switch (log) {
+				case 1:
+					System.out.println("Enter User Name:");
+					String name = sc.next();
+					System.out.println("Enter Password:");
+					String pass = String.valueOf(sc.next());
+					//System.out.println("Enter userType:");
+					ClientType type1 = ClientType.ADMIN;
+					cs.login(name, pass, type1);
+					AdminFacade adminFacade = (AdminFacade) CouponSystem.getInstance().login(name, pass, type1);
+					break;
+				case 2:
+					System.out.println("Enter User Name:");
+					String name2 = sc.next();
+					System.out.println("Enter Password:");
+					String pass2 = String.valueOf(sc.next());
+					System.out.println("Enter userType:");
+					ClientType type2 = ClientType.COMPANY;
+					cs.login(name2, pass2, type2);
+					CustomerFacade customerFacade = (CustomerFacade) CouponSystem.getInstance().login(name2, pass2, type2);
+					break;
+				case 3:
+					System.out.println("Enter User Name:");
+					String name3 = sc.next();
+					System.out.println("Enter Password:");
+					String pass3 = String.valueOf(sc.next());
+					System.out.println("Enter userType:");
+					ClientType type3 = ClientType.CUSTOMER;
+					cs.login(name3, pass3, type3);
+					System.out.println("Run Test System");
+					CompanyFacade  companyFacade = (CompanyFacade) CouponSystem.getInstance().login(name3, pass3, type3);
+					throw new LogInFailureException(GeneralExceptionConstants.ADMIN_LOGIN_FAILED);
 
+			}
+		}catch (LogInFailureException e) {
+			System.err.println(e.getMessage());
+		}
 
 
 		System.out.println("######################STARTING APP######################");
@@ -137,7 +183,7 @@ public class Main {
 
 		//* GET COUPON BY DATE *//
 		System.out.println("######################GET COUPON BY DATE######################");
-		Date date = sdf.parse("2018-07-07");
+		Date date = sdf.parse("2018-11-30");
 		printItem(companyFacade.getCouponsByDate(date));
 
 		/* CUSTOMER FACADE METHODS */
@@ -155,9 +201,15 @@ public class Main {
 
 
 
+
+
 	//	printItem(customerFacade.getAllPurchasedCouponsByPrice(150));
 		System.out.println("######################SHUTDOWN APP######################");
 		CouponSystem.getInstance().shutdown();
+
+
+
+
 
 	}
 
