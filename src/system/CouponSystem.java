@@ -15,9 +15,8 @@ import enumerators.ClientType;
 import threads.ClearCouponTask;
 
 /**
- * This is the singleton pattern coupon system of the project, that returns the
- * right facade object if the login attempt is successful. And by that the user
- * can check or make actions in the program. Also starts the Daily task thread
+ * Singleton pattern coupon system of the project, that returns the
+ * right facade object if the login attempt is successful. Starts the Daily task thread
  * for deleting unnecessary coupons. And is able to shut down the system.
  /**
  * @author Alexander Logovinsky "AlexLogo"
@@ -61,7 +60,7 @@ public final class CouponSystem {
 	}
 
 	/**
-	 * The login method that receives parameters and according to the client
+	 * Login filter method that receives parameters and according to the client
 	 * type, attempts login filter at the specific facade, while returning a facade
 	 * object if the login was successful.
 	 * 

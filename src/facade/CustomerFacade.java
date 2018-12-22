@@ -4,8 +4,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import daoLayer.CouponDBDAO;
-import daoLayer.CustomerDBDAO;
+import dao.CouponDBDAO;
+import dao.CustomerDBDAO;
 import enumerators.ClientType;
 import javaBeans.Coupon;
 import enumerators.CouponType;
@@ -36,7 +36,7 @@ public class CustomerFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method is for the customer user to purchase different company
+	 * Customer user to purchase different company
 	 * coupons from different companies. it uses the purchaseCoupon method in
 	 * the couponDBDAO class the execute the purchase at the system.
 	 * 
@@ -56,7 +56,7 @@ public class CustomerFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method get from the data base a list of all the purchased coupons of
+	 * Get from the data base a list of all the purchased coupons of
 	 * the customer logged in. It uses the getCoupons method from the
 	 * customerDBDAO class.
 	 * 
@@ -76,7 +76,7 @@ public class CustomerFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method get from the data base a list of all the purchased coupons of
+	 * Get from the data base a list of all the purchased coupons of
 	 * the customer logged in. It uses the getCoupons method from the
 	 * customerDBDAO class. After that it creates a new list of only those of
 	 * the received specific type of coupons purchased by the customer.
@@ -110,7 +110,7 @@ public class CustomerFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method get from the data base a list of all the purchased coupons of
+	 * Get from the data base a list of all the purchased coupons of
 	 * the customer logged in. It uses the getCoupons method from the
 	 * customerDBDAO class. After that it creates a new list of only those at
 	 * the received specific price or below it, of coupons purchased by the
@@ -143,7 +143,7 @@ public class CustomerFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * The login method for the customer client type user. After receiving the
+	 * Login method for the customer client type user. After receiving the
 	 * parameters, while the clientType is of customer kind, it calls the login
 	 * method in customerDBDAO and there checks the credentials and if the login
 	 * is successful, it receives true value in the result boolean and then
@@ -161,7 +161,7 @@ public class CustomerFacade implements CouponClientFacade {
 	 *         kind, or a null value.
 	 */
 	@Override
-	public CouponClientFacade login(String custName, String password, ClientType clientType) throws SQLException {
+	public CouponClientFacade login(String custName, String password, ClientType clientType) {
 
 		try {
 			// result - the returned customer facade if login is successful.

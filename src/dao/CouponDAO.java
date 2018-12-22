@@ -1,4 +1,4 @@
-package daoLayer;
+package dao;
 
 import java.sql.SQLException;
 import java.util.Collection;

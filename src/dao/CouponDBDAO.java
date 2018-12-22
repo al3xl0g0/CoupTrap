@@ -1,4 +1,4 @@
-package daoLayer;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,7 +42,7 @@ public class CouponDBDAO implements CouponDAO {
 	}
 
 	/**
-	 * This method creates the coupon's record into the Mysql data base, using
+	 * Create the coupon's record into the Mysql data base, using
 	 * the received coupon parameter.
 	 * 
 	 * @param coupon
@@ -109,7 +109,7 @@ public class CouponDBDAO implements CouponDAO {
 	}
 
 	/**
-	 * This method removes the coupon's record from the Mysql data base, using
+	 * Remove the coupon's record from the Mysql data base, using
 	 * the received coupon parameter.
 	 * 
 	 * @param coupon
@@ -160,7 +160,7 @@ public class CouponDBDAO implements CouponDAO {
 	}
 
 	/**
-	 * This method updates some columns in the coupon's record in the Mysql data
+	 * Update some columns in the coupon's record in the Mysql data
 	 * base, using the received company parameter.
 	 * 
 	 * @param coupon
@@ -201,7 +201,7 @@ public class CouponDBDAO implements CouponDAO {
 	}
 
 	/**
-	 * This method receives the coupon's record from the Mysql data base, using
+	 * Receives the coupon's record from the Mysql data base, using
 	 * the received coupon's id parameter.
 	 * 
 	 * @param id
@@ -262,7 +262,7 @@ public class CouponDBDAO implements CouponDAO {
 	}
 
 	/**
-	 * This method receives all the coupon's records of all the coupons from the
+	 * Receives all the coupon's records of all the coupons from the
 	 * Mysql data base.
 	 * 
 	 * @return Collection of Coupon - collection of all the coupons in the
@@ -310,7 +310,7 @@ public class CouponDBDAO implements CouponDAO {
 	}
 
 	/**
-	 * This method receives all the records of coupons that are in the wished
+	 * Receives all the records of coupons that are in the wished
 	 * category from all of the coupons from the Mysql data base.
 	 * 
 	 * @param couponType
@@ -359,7 +359,7 @@ public class CouponDBDAO implements CouponDAO {
 	}
 
 	/**
-	 * This method purchases a specific coupon for the customer after checking
+	 * Purchases a specific coupon for the customer after checking
 	 * if it can be done. purchasing the coupon is done by checking the
 	 * expiration date, amount left and if the customer hasn't already purchase
 	 * that coupon. purchasing includes updating the new amount and that the
@@ -391,7 +391,7 @@ public class CouponDBDAO implements CouponDAO {
 			Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			Calendar cal = Calendar.getInstance();
 			Date currentDate = null;
-			currentDate = (Date) cal.getTime();
+			currentDate = cal.getTime();
 			ResultSet rSetId = null;
 			ResultSet rSet = stmt
 					.executeQuery("SELECT ID, END_DATE, AMOUNT FROM Coupon WHERE TITLE = '" + coupon.getTitle() + "'");
@@ -432,7 +432,7 @@ public class CouponDBDAO implements CouponDAO {
 	}
 
 	/**
-	 * This method is for closing all resources that are still open in the
+	 * Closing all resources that are still open in the
 	 * method.
 	 * 
 	 * @param st
@@ -455,7 +455,7 @@ public class CouponDBDAO implements CouponDAO {
 	}
 
 	/**
-	 * a method that checks if the coupon exists in the data base or not.
+	 * Checks if the coupon exists in the data base or not.
 	 * 
 	 * @param title
 	 *            - the name of the coupon to check.

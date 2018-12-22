@@ -2,7 +2,7 @@
  * Copyright (c) 2018. Alex Logo. License freebsd.
  */
 
-package system;
+package utils;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
@@ -18,10 +18,14 @@ import enumerators.CouponType;
 import javaBeans.Customer;
 import exceptions.LogInFailureException;
 import exceptions.GeneralExceptionConstants;
+import system.CouponSystem;
 
+/**
+ * Test Main System
+ * Demo not for prodaction USE
+ */
 
-
-public class TestPreparedInsert {
+public class TestMainSystem {
     public static void main(String[] args) throws Exception  {
         Scanner sc = new Scanner(System.in);
         AdminFacade adminFacade = null;

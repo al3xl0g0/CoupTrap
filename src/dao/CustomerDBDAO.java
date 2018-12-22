@@ -1,4 +1,4 @@
-package daoLayer;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -45,7 +45,7 @@ public class CustomerDBDAO implements CustomerDAO {
 	}
 
 	/**
-	 * This method creates the customer's record into the Mysql data base, using
+	 * Create the customer's record into the Mysql data base, using
 	 * the received customer parameter.
 	 * 
 	 * @param customer
@@ -97,7 +97,7 @@ public class CustomerDBDAO implements CustomerDAO {
 	}
 
 	/**
-	 * This method removes the customer's record from the Mysql data base, using
+	 * Remove the customer's record from the Mysql data base, using
 	 * the received customer parameter.
 	 * 
 	 * @param customer
@@ -145,7 +145,7 @@ public class CustomerDBDAO implements CustomerDAO {
 	}
 
 	/**
-	 * This method updates some columns in the customer's record in the Mysql
+	 * Update some columns in the customer's record in the Mysql
 	 * data base, using the received customer parameter.
 	 * 
 	 * @param customer
@@ -184,7 +184,7 @@ public class CustomerDBDAO implements CustomerDAO {
 	}
 
 	/**
-	 * This method receives the customer's record from the Mysql data base,
+	 * Receive the customer's record from the Mysql data base,
 	 * using the received customer's id parameter.
 	 * 
 	 * @param id
@@ -247,7 +247,7 @@ public class CustomerDBDAO implements CustomerDAO {
 	}
 
 	/**
-	 * This method receives all the customer's records of all the customers from
+	 * Receive all the customer's records of all the customers from
 	 * the Mysql data base.
 	 * 
 	 * @return Collection of Customer - collection of all the customers in the
@@ -289,7 +289,7 @@ public class CustomerDBDAO implements CustomerDAO {
 	}
 
 	/**
-	 * This method receives all the logged customer's coupons from the records
+	 * Receive all the logged customer's coupons from the records
 	 * of the Mysql data base.
 	 * 
 	 * @return Collection of Coupons- collection of all the logged customer's
@@ -345,7 +345,7 @@ public class CustomerDBDAO implements CustomerDAO {
 	}
 
 	/**
-	 * This method is for closing all resources that are still open in the
+	 * Close all resources that are still open in the
 	 * method.
 	 * 
 	 * @param st
@@ -368,7 +368,7 @@ public class CustomerDBDAO implements CustomerDAO {
 	}
 
 	/**
-	 * a method that checks if the customer exists in the data base or not.
+	 * Check if the customer exists in the data base or not.
 	 * 
 	 * @param name
 	 *            - the name of the customer to check.
@@ -397,7 +397,7 @@ public class CustomerDBDAO implements CustomerDAO {
 	}
 
 	/**
-	 * A method for login into the system through passing user name and
+	 * Login into the system through passing user name and
 	 * password.
 	 * 
 	 * @param custName

@@ -1,8 +1,10 @@
 connection
-connection.mysql.tables
-daoLayer
+connection.sql.tables
+dao
+enumerators
 exceptions
 facade
 javaBeans
+system
 threads
 utils

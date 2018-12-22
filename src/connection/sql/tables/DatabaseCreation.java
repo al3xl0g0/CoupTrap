@@ -13,7 +13,7 @@ package connection.sql.tables;
     import connection.ConnectionData;
 
 /**
- * This class is useful to de-normalization of Database and tables
+ * This class is useful to de-normalization of Database and fill multiple tables data
  */
     public class DatabaseCreation {
         public static void main(String[] args) {
@@ -71,7 +71,7 @@ package connection.sql.tables;
 
             try (Connection conn = DriverManager.getConnection(ConnectionData.DB_URL, ConnectionData.USER,
                     ConnectionData.PASS);
-                   Statement stmt = conn.createStatement();)
+                   Statement stmt = conn.createStatement())
             {
                    stmt.executeUpdate(sql_companytb);
                    System.out.println(sql_companytb);

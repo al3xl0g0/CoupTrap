@@ -17,7 +17,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
-
+/**
+        * Clear old coupon on startup of the system, and then every 24 hours
+        *
+        *
+        *
+*/
 public class ClearCouponTask implements Runnable, Serializable {
     private static final long serialVersionUID = 1L;
     private static LocalDate localDate;
@@ -53,7 +58,7 @@ public class ClearCouponTask implements Runnable, Serializable {
                 }
                 
                 ConnectionPool.getInstance().returnConnection(conn);
-                System.out.println("######CLEAR OLD COUPONS#######System updated successfully and all old coupons had been removed successfully.");
+                System.out.println("######CLEAR OLD COUPONS ON STARTUP SYSTEM1#######\nSystem updated successfully and all old coupons had been removed successfully.");
                 Thread.sleep(86400000L);
             } catch (SQLException | InterruptedException | DataNotExistException | ShutDownException dcetE0  ) {
                 dcetE0.getMessage();

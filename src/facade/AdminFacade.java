@@ -2,9 +2,9 @@ package facade;
 
 import java.sql.SQLException;
 import java.util.Collection;
-import daoLayer.CompanyDBDAO;
-import daoLayer.CouponDBDAO;
-import daoLayer.CustomerDBDAO;
+import dao.CompanyDBDAO;
+import dao.CouponDBDAO;
+import dao.CustomerDBDAO;
 import enumerators.ClientType;
 import javaBeans.Company;
 import javaBeans.Customer;
@@ -86,7 +86,7 @@ public class AdminFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the updateCompany method in the companyDBDAO class
+	 * Aactivate the updateCompany method in the companyDBDAO class
 	 * while sending the received company parameter, eventually updating the
 	 * company's record in the Mysql data base.
 	 * 
@@ -105,7 +105,7 @@ public class AdminFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the getCompany method in the companyDBDAO class
+	 * Activate the getCompany method in the companyDBDAO class
 	 * while sending the received company's id parameter, eventually getting and
 	 * returning a Company object from the company's record in the Mysql data
 	 * base.
@@ -130,7 +130,7 @@ public class AdminFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the getAllCompanies method in the companyDBDAO
+	 * Activate the getAllCompanies method in the companyDBDAO
 	 * class eventually getting and returning a Array List of Company objects
 	 * from the records in the Mysql data base that represents all of the
 	 * companies in the system.
@@ -152,7 +152,7 @@ public class AdminFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the createCustomer method in the customerDBDAO
+	 * Activate the createCustomer method in the customerDBDAO
 	 * class while sending the received customer parameter, eventually creating
 	 * the customer's record into the Mysql data base.
 	 * 
@@ -171,7 +171,7 @@ public class AdminFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the removeCustomer method in the customerDBDAO
+	 * Activate the removeCustomer method in the customerDBDAO
 	 * class while sending the received customer parameter, eventually removing
 	 * the customer's record from the Mysql data base.
 	 * 
@@ -190,7 +190,7 @@ public class AdminFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the updateCustomer method in the customerDBDAO
+	 * Activate the updateCustomer method in the customerDBDAO
 	 * class while sending the received customer parameter, eventually updating
 	 * the customer's record in the Mysql data base.
 	 * 
@@ -209,7 +209,7 @@ public class AdminFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the getCustomer method in the customerDBDAO class
+	 * Activate the getCustomer method in the customerDBDAO class
 	 * while sending the received customer's id parameter, eventually getting
 	 * and returning a Customer object from the customer's record in the Mysql
 	 * data base.
@@ -235,7 +235,7 @@ public class AdminFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the getAllCustomers method in the customerDBDAO
+	 * Activate the getAllCustomers method in the customerDBDAO
 	 * class eventually getting and returning a Array List of customer objects
 	 * from the records in the Mysql data base that represents all of the
 	 * customers in the system.
@@ -257,7 +257,7 @@ public class AdminFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * The login method for the admin client type user. After receiving the
+	 * Login method for the admin client type user. After receiving the
 	 * parameters, while the clientType is of admin kind, it gets and checks the
 	 * credentials and if the login is successful, it returns CouponClientFacade
 	 * of the type AdminFacade and the user can start using the admin different

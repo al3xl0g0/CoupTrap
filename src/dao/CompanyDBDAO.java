@@ -1,4 +1,4 @@
-package daoLayer;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -44,7 +44,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	}
 
 	/**
-	 * This method creates the company's record into the Mysql data base, using
+	 * Creates the company's record into the Mysql data base, using
 	 * the received company parameter.
 	 * 
 	 * @param company
@@ -89,7 +89,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	}
 
 	/**
-	 * This method removes the company's record from the Mysql data base, using
+	 * Removes the company's record from the Mysql data base, using
 	 * the received company parameter.
 	 * 
 	 * @param company
@@ -133,7 +133,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	}
 
 	/**
-	 * This method updates some columns in the company's record in the Mysql
+	 * Updates some columns in the company's record in the Mysql
 	 * data base, using the received company parameter.
 	 * 
 	 * @param company
@@ -167,7 +167,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	}
 
 	/**
-	 * This method receives the company's record from the Mysql data base, using
+	 * Receives the company's record from the Mysql data base, using
 	 * the received company's id parameter.
 	 * 
 	 * @param id
@@ -232,8 +232,8 @@ public class CompanyDBDAO implements CompanyDAO {
 	}
 
 	/**
-	 * This method receives all the company's records of all the companies from
-	 * the Mysql data base.
+	 * Receives all the company's records of all the companies from
+	 * the MySql database.
 	 * 
 	 * @return Collection of Company - collection of all the companies in the
 	 *         system in Array list of company objects that we receive from the
@@ -260,7 +260,7 @@ public class CompanyDBDAO implements CompanyDAO {
 			rSet.absolute(0);
 
 			while (rSet.next()) {
-				// company - the created company.
+
 				Company company = new Company();
 				company = getCompany(rSet.getLong("ID"));
 				allCompanyList.add(company);
@@ -275,7 +275,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	}
 
 	/**
-	 * This method receives all the logged company's coupons from the records of
+	 * Receives all the logged company's coupons from the records of
 	 * the Mysql data base.
 	 * 
 	 * @return Collection of Coupons- collection of all the logged company's
@@ -334,7 +334,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	}
 
 	/**
-	 * This method is for closing all resources that are still open in the
+	 * Closing all resources that are still open in the
 	 * method.
 	 * 
 	 * @param st
@@ -357,7 +357,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	}
 
 	/**
-	 * a method that checks if the company exists in the data base or not.
+	 * Checks if the company exists in the data base or not.
 	 * 
 	 * @param name
 	 *            - the name of the compay to check.
@@ -385,7 +385,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	}
 
 	/**
-	 * A method for login into the system through passing user name and
+	 * Login into the system through passing user name and
 	 * password.
 	 * 
 	 * @param compName

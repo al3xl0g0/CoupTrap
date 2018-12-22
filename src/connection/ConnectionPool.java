@@ -17,8 +17,7 @@ import exceptions.GeneralExceptionConstants;
 public class ConnectionPool {
 
 
-	//private	Connection conn = null;
-	//private	Statement stmt = null;
+
 
 
 	public Object key = new Object();
@@ -51,9 +50,7 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * Creating the pool instance or getting the pool instance (while it is
-	 * already created).
-	 * 
+	 * Creating the pool instance or getting the pool instance
 	 * @return INSTANCE - the connection pool instance.
 	 */
 	public static ConnectionPool getInstance() {
@@ -70,9 +67,7 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * Getting a connection (to communicate later with the data base) from the
-	 * connection pool. Only while there is a connection left in the pool and
-	 * shutdown has not been executed.
+	 * Getting a connection
 	 * 
 	 * @return resultConnection - connection that the method got from the pool.
 	 * @throws ShutDownException
@@ -117,9 +112,7 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * Closing all of the connections in the pool. First not allowing others to
-	 * get new connections any more. Second before closing making sure all of
-	 * the connections are in the pool.
+	 * Closing all of the connections in the pool.
 	 * 
 	 * @throws SQLException
 	 *             - When database access error or other errors occur.

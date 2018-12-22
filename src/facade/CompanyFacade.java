@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
-import daoLayer.CompanyDBDAO;
-import daoLayer.CouponDBDAO;
+import dao.CompanyDBDAO;
+import dao.CouponDBDAO;
 import enumerators.ClientType;
 import javaBeans.Coupon;
 import enumerators.CouponType;
@@ -38,7 +38,7 @@ public class CompanyFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the createCoupon method in the couponDBDAO class
+	 * Activate the createCoupon method in the couponDBDAO class
 	 * while sending the received coupon parameter, eventually creating the
 	 * coupon's record into the Mysql data base. The coupon is recorded as the
 	 * coupon of the logged in company.
@@ -58,7 +58,7 @@ public class CompanyFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the removeCoupon method in the couponDBDAO class
+	 * Activate the removeCoupon method in the couponDBDAO class
 	 * while sending the received coupon parameter, eventually removing the
 	 * coupon's record from the Mysql data base.
 	 * 
@@ -77,7 +77,7 @@ public class CompanyFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the updateCoupon method in the couponDBDAO class
+	 * Activate the updateCoupon method in the couponDBDAO class
 	 * while sending the received coupon parameter, eventually updating the
 	 * coupon's record in the Mysql data base.
 	 * 
@@ -96,7 +96,7 @@ public class CompanyFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the getCoupon method in the couponDBDAO class while
+	 * Activate the getCoupon method in the couponDBDAO class while
 	 * sending the received coupon id parameter, eventually getting and
 	 * returning a Coupon object.
 	 * 
@@ -120,7 +120,7 @@ public class CompanyFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * This method activates the getAllCoupons method in the couponDBDAO,
+	 * Activate the getAllCoupons method in the couponDBDAO,
 	 * eventually getting and returning an Array List of Coupon objects.
 	 * 
 	 * @return companyDBDAO.getCoupons() - returning an Array List of all the
@@ -140,7 +140,7 @@ public class CompanyFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * The method uses the getCoupons method in the companyDBDAO, so it will
+	 * getCoupons method in the companyDBDAO, so it will
 	 * receive all the coupons of the company, and after that, will make a new
 	 * Array list of only the company coupons of the specific entered type.
 	 * 
@@ -173,7 +173,7 @@ public class CompanyFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * The method uses the getCoupons method in the companyDBDAO, so it will
+	 * getCoupons method in the companyDBDAO, so it will
 	 * receive all the coupons of the company, and after that, will make a new
 	 * Array list of only the company's coupons at the specific price, or below
 	 * it.
@@ -211,7 +211,7 @@ public class CompanyFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * The method uses the getCoupons method in the companyDBDAO, so it will
+	 * getCoupons method in the companyDBDAO, so it will
 	 * receive all the coupons of the company, and after that, will make a new
 	 * Array list of only the company's coupons that their end date is at the
 	 * date received or before it.
@@ -248,7 +248,7 @@ public class CompanyFacade implements CouponClientFacade {
 	}
 
 	/**
-	 * The login method for the company client type user. After receiving the
+	 * Login method for the company client type user. After receiving the
 	 * parameters, while the clientType is of company kind, it calls the login
 	 * method in companyDBDAO and there checks the credentials and if the login
 	 * is successful, it receives true value in the result boolean and then

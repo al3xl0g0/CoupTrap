@@ -33,9 +33,8 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		try {
 			CouponSystem cs = CouponSystem.getInstance();
-			System.out.println("enter:\n 1 for Admin: User name admin, password 1234, RUN TEST SYSTEM \n 2 for customer \n 3 for company");
+			System.out.println("Welcom to CoupTrap coupon system\nPlease TYPE:\n 1 -> for Admin User Login # User name: admin, password: 1234, RUN TEST SYSTEM \n 2 -> for Customer Login \n 3 -> for Company Login");
 			//boolean log = false;
-            System.out.println("Please TYPE: 1");
             int log = sc.nextInt();
 			switch (log) {
 				case 1:
@@ -43,31 +42,28 @@ public class Main {
 					String name = sc.next();
 					System.out.println("Enter Password:");
 					String pass = String.valueOf(sc.next());
-					//System.out.println("Enter userType:");
 					ClientType type1 = ClientType.ADMIN;
 					cs.login(name, pass, type1);
-					AdminFacade adminFacade = (AdminFacade) CouponSystem.getInstance().login(name, pass, type1);
+					//AdminFacade adminFacade = (AdminFacade) CouponSystem.getInstance().login(name, pass, type1);
 					break;
 				case 2:
 					System.out.println("Enter User Name:");
 					String name2 = sc.next();
 					System.out.println("Enter Password:");
 					String pass2 = String.valueOf(sc.next());
-					System.out.println("Enter userType:");
 					ClientType type2 = ClientType.COMPANY;
 					cs.login(name2, pass2, type2);
-					CustomerFacade customerFacade = (CustomerFacade) CouponSystem.getInstance().login(name2, pass2, type2);
+					//CustomerFacade customerFacade = (CustomerFacade) CouponSystem.getInstance().login(name2, pass2, type2);
 					break;
 				case 3:
 					System.out.println("Enter User Name:");
 					String name3 = sc.next();
 					System.out.println("Enter Password:");
 					String pass3 = String.valueOf(sc.next());
-					System.out.println("Enter userType:");
 					ClientType type3 = ClientType.CUSTOMER;
 					cs.login(name3, pass3, type3);
 					System.out.println("Run Test System");
-					CompanyFacade  companyFacade = (CompanyFacade) CouponSystem.getInstance().login(name3, pass3, type3);
+					//CompanyFacade  companyFacade = (CompanyFacade) CouponSystem.getInstance().login(name3, pass3, type3);
 					throw new LogInFailureException(GeneralExceptionConstants.ADMIN_LOGIN_FAILED);
 
 			}
@@ -77,7 +73,9 @@ public class Main {
 
 
 		System.out.println("######################STARTING APP######################");
+        System.out.println("######################SYSTEM TEST RUN1##################");
 		System.out.println("######################ADMIN FACADE######################");
+
 		AdminFacade adminF = (AdminFacade) CouponSystem.getInstance().login("admin", "1234", ClientType.ADMIN);
 
 		System.out.println("#####CREATE COMPANY CONSTRUCTOR TEST######################");
@@ -93,15 +91,15 @@ public class Main {
 		System.out.println("Company Created " + company);
 
 		System.out.println("print all companies");
-		System.out.println("######################PRINT ALL COMPANY########################");
+		System.out.println("######################PRINT ALL COMPANY#################");
 		printItem(adminF.getAllCompanies());
 
-		System.out.println("######################UPDATE COMPANY########################");
+		System.out.println("######################UPDATE COMPANY####################");
 		company.setEmail("el34f@walla.com");
 		company.setPassword("8888");
 		adminF.updateCompany(company);
 
-		System.out.println("####################GET COMPANY BY: 27#######################");
+		System.out.println("####################GET COMPANY BY: 27##################");
 		System.out.println(adminF.getCompany(20));
 
 
@@ -129,13 +127,13 @@ public class Main {
 		System.out.println("####################GET CUSTOMER BY ID###################");
 		System.out.println(adminF.getCustomer(1));
 
-		System.out.println("####################REMOVE CUSTOMER###################");
+		System.out.println("####################REMOVE CUSTOMER######################");
 		Customer exsistingCustomerForRemove = new Customer();
 		exsistingCustomerForRemove.setCustName("User6");
 		exsistingCustomerForRemove.setPassword("6666");
 		adminF.removeCustomer(exsistingCustomerForRemove);
 
-		System.out.println("####################GET ALL CUSTOMER###################");
+		System.out.println("####################GET ALL CUSTOMER#####################");
 		printItem(adminF.getAllCustomers());
 
 		System.out.println("###############COMPANY FACADE LOGIN######################");
@@ -143,7 +141,7 @@ public class Main {
 				ClientType.COMPANY);
 
 
-		System.out.println("###############CREATE COUPON######################");
+		System.out.println("###############CREATE COUPON#############################");
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date startDate = sdf.parse("2018-12-07");
 		Date endDate = sdf.parse("2019-12-08");
@@ -160,17 +158,17 @@ public class Main {
 
 		companyFacade.createCoupon(coupon);
 
-		System.out.println("###############UPDATE COUPON##########################");
+		System.out.println("###############UPDATE COUPON#############################");
 		Date endDateUpdate = sdf.parse("2018-07-07");
 		coupon.setEndDate(endDateUpdate);
 		coupon.setPrice(1000);
 		companyFacade.updateCoupon(coupon);
 		System.out.println(coupon);
 
-		System.out.println("###############GET COUPON BY ID:######################");
+		System.out.println("###############GET COUPON BY ID:##########################");
 		System.out.println(companyFacade.getCoupon(107));
 
-		System.out.println("######################REMOVE COUPON######################");
+		System.out.println("######################REMOVE COUPON#######################");
 		companyFacade.removeCoupon(coupon);
 
 
@@ -182,7 +180,7 @@ public class Main {
 		//printItem(companyFacade.getCouponsByPrice(100));
 
 		//* GET COUPON BY DATE *//
-		System.out.println("######################GET COUPON BY DATE######################");
+		System.out.println("######################GET COUPON BY DATE##################");
 		Date date = sdf.parse("2018-11-30");
 		printItem(companyFacade.getCouponsByDate(date));
 
@@ -204,7 +202,7 @@ public class Main {
 
 
 	//	printItem(customerFacade.getAllPurchasedCouponsByPrice(150));
-		System.out.println("######################SHUTDOWN APP######################");
+		System.out.println("######################SHUTDOWN APP##########################");
 		CouponSystem.getInstance().shutdown();
 
 
