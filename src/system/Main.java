@@ -62,9 +62,10 @@ public class Main {
 		System.out.println("####################REMOVE COMPANY#######################");
 		Company exsistingCompanyForRemove = new Company();
 		exsistingCompanyForRemove.setCompName("BUG22");
-		//exsistingCompanyForRemove.setPassword("2222");
-		//exsistingCompanyForRemove.setEmail("bug1@gmail.com");
+		//exsistingCompanyForRemove.setPassword("77787");
+		//exsistingCompanyForRemove.setEmail("el2zadsf23@gmail.com");
 		adminF.removeCompany(exsistingCompanyForRemove);
+
 		printItem(adminF.getAllCompanies());
 
 		System.out.println("######################CREATE CUSTOMER####################");
