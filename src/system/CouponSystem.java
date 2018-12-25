@@ -97,7 +97,7 @@ public final class CouponSystem {
 	}
 
 	/**
-	 *  Shut down: Starting at stopping the daily
+	 * Shutdown: Starting at stopping the daily
 	 * task thread, and after that, closing all connections and exiting.
 	 *
 	 */

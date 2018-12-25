@@ -79,11 +79,11 @@ public class Main {
 		AdminFacade adminF = (AdminFacade) CouponSystem.getInstance().login("admin", "1234", ClientType.ADMIN);
 
 		System.out.println("#####CREATE COMPANY CONSTRUCTOR TEST######################");
-		adminF.createCompany(new Company("BUG22", "2222", "bug1@gmail.com"));
+		adminF.createCompany(new Company("BUG222", "2222", "bug1@gmail.com"));
 
 		System.out.println("####CREATE COMPANY TEST GETER's and SETERS's##############");
 		Company company = new Company();
-		company.setCompName("Foodli");
+		company.setCompName("Foodli2");
 		company.setPassword("77787");
 		company.setEmail("el2zadsf23@gmail.com");
 
@@ -137,7 +137,7 @@ public class Main {
 		printItem(adminF.getAllCustomers());
 
 		System.out.println("###############COMPANY FACADE LOGIN######################");
-		CompanyFacade companyFacade = (CompanyFacade) CouponSystem.getInstance().login("Maps", "8888",
+		CompanyFacade companyFacade = (CompanyFacade) CouponSystem.getInstance().login("Google", "6452341",
 				ClientType.COMPANY);
 
 
@@ -159,7 +159,7 @@ public class Main {
 		companyFacade.createCoupon(coupon);
 
 		System.out.println("###############UPDATE COUPON#############################");
-		Date endDateUpdate = sdf.parse("2018-07-07");
+		Date endDateUpdate = sdf.parse("2018-12-12");
 		coupon.setEndDate(endDateUpdate);
 		coupon.setPrice(1000);
 		companyFacade.updateCoupon(coupon);
@@ -180,9 +180,9 @@ public class Main {
 		//printItem(companyFacade.getCouponsByPrice(100));
 
 		//* GET COUPON BY DATE *//
-		System.out.println("######################GET COUPON BY DATE##################");
-		Date date = sdf.parse("2018-11-30");
-		printItem(companyFacade.getCouponsByDate(date));
+		//System.out.println("######################GET COUPON BY DATE##################");
+		//Date date = sdf.parse("2018-11-30");
+		//printItem(companyFacade.getCouponsByDate(date));
 
 		/* CUSTOMER FACADE METHODS */
 		System.out.println("################CUSTOMER FACADE LOGIN#######################");
@@ -190,7 +190,7 @@ public class Main {
 
 		//* PURCHASE COUPON *//
 		System.out.println("######################PURCHASE COUPON#######################");
-		customerFacade.purchaseCoupon(companyFacade.getCoupon(127));
+		customerFacade.purchaseCoupon(companyFacade.getCoupon(126));
 
 		//* GET ALL PURCHASED COUPONS *//
 		System.out.println("######################PRINT ALL COUPON######################");

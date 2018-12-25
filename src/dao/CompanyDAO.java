@@ -17,13 +17,38 @@ import exceptions.ShutDownException;
 public interface CompanyDAO {
 
 
+	/**
+	 * @param company
+	 * @throws SQLException
+	 * @throws DuplicateDataException
+	 * @throws ShutDownException
+	 */
 	 void createCompany(Company company) throws SQLException, DuplicateDataException, ShutDownException;
 
+	/**
+	 * @param Company
+	 * @throws SQLException
+	 * @throws DataNotExistException
+	 * @throws ShutDownException
+	 */
 	 void removeCompany(Company Company) throws SQLException, DataNotExistException, ShutDownException;
 
+	/**
+	 * @param Company
+	 * @throws SQLException
+	 * @throws DataNotExistException
+	 * @throws ShutDownException
+	 */
 	 void updateCompany(Company Company) throws SQLException, DataNotExistException, ShutDownException;
 
 
+	/**
+	 * @param id
+	 * @return
+	 * @throws SQLException
+	 * @throws DataNotExistException
+	 * @throws ShutDownException
+	 */
 	 Company getCompany(long id) throws SQLException, DataNotExistException, ShutDownException;
 
 	 Collection<Company> getAllCompanies() throws SQLException, DataNotExistException, ShutDownException;

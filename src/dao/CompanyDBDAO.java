@@ -35,7 +35,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	/**
 	 * Constructs the class that communicates with the db and initializes the
 	 * pool variable with the Connection pool's instance.
-	 * 
+	 *
 	 */
 	public CompanyDBDAO() {
 
@@ -46,7 +46,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	/**
 	 * Creates the company's record into the Mysql data base, using
 	 * the received company parameter.
-	 * 
+	 *
 	 * @param company
 	 *            - the company object that is filled with the fields of the
 	 *            company to add to the data base.
@@ -91,7 +91,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	/**
 	 * Removes the company's record from the Mysql data base, using
 	 * the received company parameter.
-	 * 
+	 *
 	 * @param company
 	 *            - the company object that is filled with the fields of the
 	 *            company to remove from the data base.
@@ -135,7 +135,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	/**
 	 * Updates some columns in the company's record in the Mysql
 	 * data base, using the received company parameter.
-	 * 
+	 *
 	 * @param company
 	 *            - the company object that is filled with the fields of the
 	 *            company to update into the data base.
@@ -169,7 +169,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	/**
 	 * Receives the company's record from the Mysql data base, using
 	 * the received company's id parameter.
-	 * 
+	 *
 	 * @param id
 	 *            - the company's id of the company we wish to get from the data
 	 *            base.
@@ -234,7 +234,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	/**
 	 * Receives all the company's records of all the companies from
 	 * the MySql database.
-	 * 
+	 *
 	 * @return Collection of Company - collection of all the companies in the
 	 *         system in Array list of company objects that we receive from the
 	 *         records of the data base.
@@ -277,7 +277,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	/**
 	 * Receives all the logged company's coupons from the records of
 	 * the Mysql data base.
-	 * 
+	 *
 	 * @return Collection of Coupons- collection of all the logged company's
 	 *         coupons in the system in Array list with company objects that we
 	 *         receive from the records of the data base.
@@ -336,7 +336,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	/**
 	 * Closing all resources that are still open in the
 	 * method.
-	 * 
+	 *
 	 * @param st
 	 *            - the statement object that was created for the of the sql
 	 *            query.
@@ -358,7 +358,7 @@ public class CompanyDBDAO implements CompanyDAO {
 
 	/**
 	 * Checks if the company exists in the data base or not.
-	 * 
+	 *
 	 * @param name
 	 *            - the name of the compay to check.
 	 * @return boolean - a boolean value of whether the company exists or not.
@@ -375,7 +375,7 @@ public class CompanyDBDAO implements CompanyDAO {
 
 		ResultSet rSet = stmt.executeQuery("SELECT COMP_NAME FROM Company WHERE COMP_NAME='" + name + "'");
 
-		boolean flag = false;
+		boolean flag = true;
 		if (rSet.next()) {
 			flag = true;
 		}
@@ -387,7 +387,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	/**
 	 * Login into the system through passing user name and
 	 * password.
-	 * 
+	 *
 	 * @param compName
 	 *            - the user name of the company that wants to log in.
 	 * @param password

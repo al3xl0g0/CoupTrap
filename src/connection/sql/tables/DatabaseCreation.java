@@ -16,6 +16,7 @@ package connection.sql.tables;
  * This class is useful to de-normalization of Database and fill multiple tables data
  */
     public class DatabaseCreation {
+
         public static void main(String[] args) {
 
             String sql_companytb = "CREATE TABLE `Company` (\n" +
