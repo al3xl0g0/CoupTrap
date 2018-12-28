@@ -367,6 +367,7 @@ public class CompanyDBDAO implements CompanyDAO {
 	 * @throws ShutDownException
 	 *             - in cases which the system is shutting down while there is
 	 *             attempt to do use of the program.
+	 *             attempt to do use of the program.
 	 */
 	private boolean checkIfCompanyExists(String name) throws SQLException, ShutDownException {
 
@@ -375,7 +376,7 @@ public class CompanyDBDAO implements CompanyDAO {
 
 		ResultSet rSet = stmt.executeQuery("SELECT COMP_NAME FROM Company WHERE COMP_NAME='" + name + "'");
 
-		boolean flag = true;
+		boolean flag = false;
 		if (rSet.next()) {
 			flag = true;
 		}

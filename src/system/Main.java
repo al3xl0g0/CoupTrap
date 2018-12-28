@@ -78,8 +78,8 @@ public class Main {
 
 		AdminFacade adminF = (AdminFacade) CouponSystem.getInstance().login("admin", "1234", ClientType.ADMIN);
 
-		System.out.println("#####CREATE COMPANY CONSTRUCTOR TEST######################");
-		adminF.createCompany(new Company("BUG222", "2222", "bug1@gmail.com"));
+		System.out.println("#####CREATE COMPANY: TEST IF COMPANY ALREADY EXISTS IN THE SYSTEM######################");
+		adminF.createCompany(new Company("BUG22", "2222", "bug1@gmail.com"));
 
 		System.out.println("####CREATE COMPANY TEST GETER's and SETERS's##############");
 		Company company = new Company();
@@ -106,10 +106,10 @@ public class Main {
 		System.out.println("####################REMOVE COMPANY#######################");
 		Company exsistingCompanyForRemove = new Company();
 		exsistingCompanyForRemove.setCompName("BUG22");
-		//exsistingCompanyForRemove.setPassword("77787");
-		//exsistingCompanyForRemove.setEmail("el2zadsf23@gmail.com");
+		exsistingCompanyForRemove.setPassword("2222");
+		exsistingCompanyForRemove.setEmail("bug1@gmail.com");
 		adminF.removeCompany(exsistingCompanyForRemove);
-
+		System.out.println("Company Removed = [" + exsistingCompanyForRemove + "]");
 		printItem(adminF.getAllCompanies());
 
 		System.out.println("######################CREATE CUSTOMER####################");
@@ -143,7 +143,7 @@ public class Main {
 
 		System.out.println("###############CREATE COUPON#############################");
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Date startDate = sdf.parse("2018-12-07");
+		Date startDate = sdf.parse("2019-01-07");
 		Date endDate = sdf.parse("2019-12-08");
 
 		Coupon coupon = new Coupon();
@@ -191,9 +191,10 @@ public class Main {
 		//* PURCHASE COUPON *//
 		System.out.println("######################PURCHASE COUPON#######################");
 		customerFacade.purchaseCoupon(companyFacade.getCoupon(126));
+		customerFacade.purchaseCoupon(companyFacade.getCoupon(127));
 
 		//* GET ALL PURCHASED COUPONS *//
-		System.out.println("######################PRINT ALL COUPON######################");
+		System.out.println("######################PRINT ALL PURCHASED COUPON BY CUSTOMER######################");
 		printItem(customerFacade.getAllPurchasedCoupons());
 
 
